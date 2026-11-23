@@ -366,13 +366,13 @@ export const EventsView: React.FC<EventsViewProps> = ({
                     </div>
                   </div>
 
-                  <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800">
-                    <div>
+                  <div className="mt-5 flex items-center justify-between gap-2 border-t border-slate-100 pt-4 dark:border-slate-800">
+                    <div className="flex items-baseline gap-2 min-w-0 whitespace-nowrap">
                       <span className="font-mono text-base font-semibold tabular-nums text-slate-900 dark:text-slate-100">
                         {ev.price === 0 ? 'Free' : `$${ev.price.toFixed(2)}`}
                       </span>
-                      <span className="ml-2 font-mono text-xs tabular-nums text-slate-500 dark:text-slate-400">
-                        {remaining} seats left
+                      <span className="font-mono text-xs tabular-nums text-slate-500 dark:text-slate-400">
+                        {remaining} left
                       </span>
                     </div>
 

@@ -42,7 +42,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
   const totalTickets = attendees.reduce((s, a) => s + a.tickets, 0);
   const totalCapacity = events.reduce((s, e) => s + e.capacity, 0);
   const overallOccupancy =
-    totalCapacity > 0 ? Math.round((totalTickets / totalCapacity) * 100) : 0;
+    totalCapacity > 0 ? ((totalTickets / totalCapacity) * 100).toFixed(1) : '0.0';
 
   const maxEventRevenue = Math.max(1, ...eventMetrics.map((m) => m.revenue));
 

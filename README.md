@@ -1,17 +1,16 @@
 # EventPortal — Enterprise Event Management & Media Showcase
 
-A complete, production-ready web application for end-to-end event lifecycle management, ticket reservations, attendee check-ins, sponsorship tracking, financial analytics, and curated event photography management.
+A complete, production-ready web application for end-to-end event lifecycle management, ticket reservations, attendee check-ins, sponsorship tracking, financial analytics, and curated event media management.
 
 ---
 
 ## Table of Contents
 
 1. [Overview & Key Capabilities](#overview--key-capabilities)
-2. [15 Uploaded Event Images — Embedded Visuals & Detailed Explanations](#15-uploaded-event-images--embedded-visuals--detailed-explanations)
-3. [Feature Walkthrough](#feature-walkthrough)
-4. [Technology Stack & Architecture](#technology-stack--architecture)
-5. [Project Structure](#project-structure)
-6. [Getting Started](#getting-started)
+2. [15 Website Feature Screenshots & Detailed Explanations](#15-website-feature-screenshots--detailed-explanations)
+3. [Technology Stack & Architecture](#technology-stack--architecture)
+4. [Project Structure](#project-structure)
+5. [Getting Started](#getting-started)
 
 ---
 
@@ -19,194 +18,150 @@ A complete, production-ready web application for end-to-end event lifecycle mana
 
 EventPortal upgrades the original static HTML prototype (`ProjectDone.html`) into a modular React + TypeScript + Tailwind CSS application with persistent browser state (`localStorage`), real file-upload support, downloadable CSV/JSON exports, printable ticket receipts, and dark/light theme support.
 
-- **15 Full-Featured Events**: Pre-seeded across 10 distinct event formats (*Conference, Workshop, Meetup, Webinar, Gala, Hackathon, Forum, Bootcamp, Exhibition, Retreat*), complete with multi-session agendas, speaker bios, capacities, and pricing.
-- **15 Uploaded High-Resolution Photographs + Custom Upload Studio**: Every event is paired with a bespoke `4:3` editorial photograph (`1408 × 1056 px`) documented with venue context and visual composition notes. Organizers can also upload custom JPG/PNG/WEBP files directly from disk.
-- **Complete End-to-End Workflows**: No placeholder alerts or stub dialogs—every action uses inline validation, accessible modals, and live state updates across all modules.
+- **15 Full-Featured Events**: Pre-seeded across 10 event formats (*Conference, Workshop, Meetup, Webinar, Gala, Hackathon, Forum, Bootcamp, Exhibition, Retreat*), complete with scheduled multi-session agendas, speaker profiles, capacities, and pricing.
+- **Custom Image Upload & Media Studio**: Integrated media showcase with lightbox metadata inspection and local JPG/PNG/WEBP file uploads (`FileReader` persistence).
+- **Complete End-to-End Workflows**: Accessible inline validation, confirmation modals, downloadable receipts, CSV/JSON reporting exports, and dark/light theme support.
 
 ---
 
-## 15 Uploaded Event Images — Embedded Visuals & Detailed Explanations
+## 15 Website Feature Screenshots & Detailed Explanations
 
-All 15 curated event photographs are stored in `src/assets/images/`, embedded below with full venue metadata, technical specifications, and detailed editorial explanations, and integrated directly into the app's **Media Gallery** (`src/components/GalleryView.tsx`) and **Events Directory** (`src/data/seedData.ts`).
-
----
-
-### 01. Global Tech Summit Keynote Auditorium
-![01. Global Tech Summit Keynote Auditorium](src/assets/images/event_tech_summit_1795427460531.jpg)
-
-- **File**: `src/assets/images/event_tech_summit_1795427460531.jpg`
-- **Event**: Global Tech Summit 2026 (`Conference`)
-- **Venue**: Grand Symphony Hall, San Francisco
-- **Specs**: `1408 × 1056 px (4:3)` · `428 KB` · Uploaded `2026-10-12`
-- **Detailed Explanation**: Uploaded as the primary hero visual for the Global Tech Summit 2026. Shot from the balcony centerline in `4:3` editorial framing, it highlights the keynote speaker under warm focused spotlights against curved acoustic timber balconies, communicating authority and executive scale for conference attendees and Platinum sponsors.
+Below are **15 live UI screenshots** captured directly from the running **EventPortal** application, illustrating each feature module and workflow in detail.
 
 ---
 
-### 02. Full-Stack Engineering Loft Workshop
-![02. Full-Stack Engineering Loft Workshop](src/assets/images/event_web_workshop_1795427464151.jpg)
+### 01. Dashboard Overview — KPIs, Operations Bar & Flagship Spotlight
+![01. Dashboard Overview](docs/screenshots/01-dashboard-overview.png)
 
-- **File**: `src/assets/images/event_web_workshop_1795427464151.jpg`
-- **Event**: Modern Web Architecture Workshop (`Workshop`)
-- **Venue**: Foundry Brick Studio, Seattle
-- **Specs**: `1408 × 1056 px (4:3)` · `462 KB` · Uploaded `2026-10-14`
-- **Detailed Explanation**: Documents the hands-on workshop environment for the Modern Web Architecture Workshop. The sunlit brick loft and multi-monitor developer tables clearly illustrate the 1:6 mentor-to-engineer ratio, collaborative debugging workflow, and interactive lab seating available to ticket holders.
+- **Screenshot**: `docs/screenshots/01-dashboard-overview.png`
+- **Module**: `src/components/DashboardView.tsx`
+- **Detailed Feature Explanation**: The primary command center presents four real-time tabular-numeral KPI cards (**Published Events**, **Tickets Issued & Check-In Rate**, **Ticket Revenue**, and **Active Sponsors**), an **Event Operations & Media Studio** quick-action strip, and the **Upcoming Flagship Events** 3-column spotlight with instant **Book Tickets** triggers.
 
 ---
 
-### 03. Twilight Founders & Venture Networking Lounge
-![03. Twilight Founders & Venture Networking Lounge](src/assets/images/event_startup_mixer_1795427464179.jpg)
+### 02. Dashboard Overview — Recent Attendee Registrations Ledger
+![02. Dashboard Recent Attendee Registrations](docs/screenshots/02-dashboard-recent-ledger.png)
 
-- **File**: `src/assets/images/event_startup_mixer_1795427464179.jpg`
-- **Event**: Startup Founders & Venture Mixer (`Meetup`)
-- **Venue**: Skyline Glass Pavilion, New York
-- **Specs**: `1408 × 1056 px (4:3)` · `415 KB` · Uploaded `2026-10-16`
-- **Detailed Explanation**: Represents the Startup Founders & Venture Mixer. Warm tungsten interior lighting balanced against the twilight skyline conveys an approachable, curated networking atmosphere—helping prospective guests understand the dress code, crowd density, and open-floor conversation layout.
+- **Screenshot**: `docs/screenshots/02-dashboard-recent-ledger.png`
+- **Module**: `src/components/DashboardView.tsx`
+- **Detailed Feature Explanation**: Located immediately below the event spotlight, this high-density table summarizes the latest ticket reservations with monospace ticket codes (`EVT-9046-F`), attendee emails, seat counts, exact payment totals, and explicit check-in status indicators (**Checked In** vs. **Pending**), plus a direct jump to the full Attendee Roster.
 
 ---
 
-### 04. Broadcast Webinar & Digital Strategy Studio
-![04. Broadcast Webinar & Digital Strategy Studio](src/assets/images/event_marketing_studio_1795427464071.jpg)
+### 03. Events Directory — Multi-Criteria Search, Filter & Sort Grid
+![03. Events Directory](docs/screenshots/03-events-directory.png)
 
-- **File**: `src/assets/images/event_marketing_studio_1795427464071.jpg`
-- **Event**: Digital Growth & Strategy Webinar (`Webinar`)
-- **Venue**: Studio B Broadcast Suite (Online)
-- **Specs**: `1408 × 1056 px (4:3)` · `390 KB` · Uploaded `2026-10-18`
-- **Detailed Explanation**: Used to showcase production quality for remote Digital Growth & Strategy Webinars. Highlights the dedicated broadcast microphone rig, soft key studio lighting, and clean presenter desk so remote registrants know they are enrolling in a studio-grade live session rather than an ad-hoc screen share.
+- **Screenshot**: `docs/screenshots/03-events-directory.png`
+- **Module**: `src/components/EventsView.tsx`
+- **Detailed Feature Explanation**: Displays all scheduled programs in a responsive 3-column grid featuring live keyword search (matching event titles, descriptions, speakers, or venues), category filtering, date filtering, and sorting by **Date** or **Price**. Each card displays remaining seat availability, a wishlist heart toggle, **Details**, and **Book** actions.
 
 ---
 
-### 05. Annual Creative Leadership Museum Gala
-![05. Annual Creative Leadership Museum Gala](src/assets/images/event_design_gala_1795427463724.jpg)
+### 04. Event Detail Modal — Program Overview & Scheduled Agenda
+![04. Event Detail & Agenda Modal](docs/screenshots/04-event-detail-agenda.png)
 
-- **File**: `src/assets/images/event_design_gala_1795427463724.jpg`
-- **Event**: Annual Design & Leadership Gala (`Gala`)
-- **Venue**: Civic Limestone Atrium, Chicago
-- **Specs**: `1408 × 1056 px (4:3)` · `512 KB` · Uploaded `2026-10-20`
-- **Detailed Explanation**: Serves as the flagship visual for the Annual Design & Leadership Gala Dinner. Captures formal linen-draped table arrangement, dining seating capacity, and architectural grandeur beneath glass skylights so VIP table sponsors and individual patrons can preview the venue ambiance prior to seat selection.
+- **Screenshot**: `docs/screenshots/04-event-detail-agenda.png`
+- **Module**: `src/components/EventsView.tsx`
+- **Detailed Feature Explanation**: Clicking any event card opens the full **Event Detail Modal**, presenting the `16:9` cover preview, venue location, lead speaker credentials, capacity limits, full **Program Overview & Detailed Explanation**, a structured **Scheduled Agenda** timeline, and direct **Edit**, **Delete**, and **Reserve Tickets** controls.
 
 ---
 
-### 06. 48-Hour University Innovation Hackathon
-![06. 48-Hour University Innovation Hackathon](src/assets/images/event_ai_hackathon_1795427463487.jpg)
+### 05. Create & Edit Event Studio — Full Program & Image Picker Form
+![05. Create Event Studio](docs/screenshots/05-create-event-studio.png)
 
-- **File**: `src/assets/images/event_ai_hackathon_1795427463487.jpg`
-- **Event**: Applied Systems Hackathon (`Hackathon`)
-- **Venue**: North Innovation Hall, Boston
-- **Specs**: `1408 × 1056 px (4:3)` · `448 KB` · Uploaded `2026-10-22`
-- **Detailed Explanation**: Illustrates the Applied Systems Hackathon environment. Shows real team pod spacing, rolling glass whiteboard ideation zones, high-density power tables, and mezzanine mentor walkways—giving student and professional builders an accurate preview of workspace amenities.
+- **Screenshot**: `docs/screenshots/05-create-event-studio.png`
+- **Module**: `src/components/EventsView.tsx`
+- **Detailed Feature Explanation**: Organizers can create new events or edit existing ones with structured fields for title, category, venue, date, start time, ticket price, capacity, speaker bio, summary, and detailed logistics. The embedded **Event Cover Image** selector supports choosing from existing library assets or uploading a new image file from disk.
 
 ---
 
-### 07. Executive FinTech Policy & Markets Panel
-![07. Executive FinTech Policy & Markets Panel](src/assets/images/event_fintech_forum_1795427463640.jpg)
+### 06. Media Gallery Showcase — Curated Library & Category Tabs
+![06. Media Gallery Showcase](docs/screenshots/06-media-gallery-showcase.png)
 
-- **File**: `src/assets/images/event_fintech_forum_1795427463640.jpg`
-- **Event**: Global FinTech & Payments Forum (`Forum`)
-- **Venue**: Exchange Plenary Room, London
-- **Specs**: `1408 × 1056 px (4:3)` · `405 KB` · Uploaded `2026-10-25`
-- **Detailed Explanation**: Supports the Global FinTech & Payments Forum listing. The walnut and brushed slate stage framing emphasizes moderated C-suite dialogue, clear sightlines for audience Q&A, and an intimate plenary format tailored to institutional finance leaders.
+- **Screenshot**: `docs/screenshots/06-media-gallery-showcase.png`
+- **Module**: `src/components/GalleryView.tsx`
+- **Detailed Feature Explanation**: Dedicated media management workspace featuring category filter tabs, `4:3` visual cards with technical dimensions (`1408 × 1056 px`), file sizes, upload dates, venue tags, linked-event booking shortcuts, and detailed contextual explanations for every stored visual asset.
 
 ---
 
-### 08. Cloud Infrastructure & Reliability Bootcamp
-![08. Cloud Infrastructure & Reliability Bootcamp](src/assets/images/event_cloud_bootcamp_1795427464004.jpg)
+### 07. Media Upload Studio — Local File Dropzone & Metadata Form
+![07. Media Upload Studio](docs/screenshots/07-media-upload-studio.png)
 
-- **File**: `src/assets/images/event_cloud_bootcamp_1795427464004.jpg`
-- **Event**: Cloud Reliability & SRE Bootcamp (`Bootcamp`)
-- **Venue**: Systems Engineering Institute, Austin
-- **Specs**: `1408 × 1056 px (4:3)` · `454 KB` · Uploaded `2026-10-28`
-- **Detailed Explanation**: Featured on the Cloud Reliability & SRE Bootcamp page. Demonstrates the tiered oak classroom geometry, overhead skylight illumination, and dual-screen projection setup ensuring every attendee maintains unobstructed visibility during live terminal labs.
+- **Screenshot**: `docs/screenshots/07-media-upload-studio.png`
+- **Module**: `src/components/GalleryView.tsx`
+- **Detailed Feature Explanation**: Clicking **Upload New Image** expands an interactive upload studio with a live preview dropzone accepting JPG, PNG, and WEBP files via the browser `FileReader` API. Organizers attach an image title, category, venue, linked event, short caption, and detailed explanation before publishing directly to the gallery.
 
 ---
 
-### 09. Industrial Hardware & Product Design Expo
-![09. Industrial Hardware & Product Design Expo](src/assets/images/event_product_expo_1795427463465.jpg)
+### 08. Lightbox Metadata Inspector — Full-Resolution Asset Audit
+![08. Lightbox Metadata Inspector](docs/screenshots/08-media-lightbox-inspector.png)
 
-- **File**: `src/assets/images/event_product_expo_1795427463465.jpg`
-- **Event**: Industrial & Product Design Expo (`Exhibition`)
-- **Venue**: Glasshouse Exhibition Pavilion, Berlin
-- **Specs**: `1408 × 1056 px (4:3)` · `476 KB` · Uploaded `2026-11-01`
-- **Detailed Explanation**: Uploaded for the Industrial & Product Design Expo. Highlights gallery-grade matte-white product pedestals, generous visitor circulation corridors, and travertine flooring—ideal for hardware sponsors evaluating booth visibility and prototype demonstration space.
+- **Screenshot**: `docs/screenshots/08-media-lightbox-inspector.png`
+- **Module**: `src/components/GalleryView.tsx`
+- **Detailed Feature Explanation**: Clicking **Inspect** on any media card opens a full-resolution lightbox dialog displaying the uncropped image alongside a 4-column metadata strip (**Resolution**, **File Size**, **Uploaded Date**, and **Uploaded By**) and complete venue/editorial documentation.
 
 ---
 
-### 10. Timber Pavilion Executive Strategy Retreat
-![10. Timber Pavilion Executive Strategy Retreat](src/assets/images/event_leadership_retreat_1795427464411.jpg)
+### 09. Ticket Booking & Checkout — Live Fee Calculation & Payment Methods
+![09. Ticket Booking & Checkout](docs/screenshots/09-ticket-booking-checkout.png)
 
-- **File**: `src/assets/images/event_leadership_retreat_1795427464411.jpg`
-- **Event**: Executive Strategy & Leadership Retreat (`Retreat`)
-- **Venue**: Cascade Timber Pavilion, Portland
-- **Specs**: `1408 × 1056 px (4:3)` · `488 KB` · Uploaded `2026-11-04`
-- **Detailed Explanation**: Curated for the Annual Engineering & Product Leadership Retreat. Conveys the focused 12-seat round oak table format, natural daylighting, and distraction-free woodland setting designed for deep annual planning and peer executive alignment.
+- **Screenshot**: `docs/screenshots/09-ticket-booking-checkout.png`
+- **Module**: `src/components/BookingView.tsx`
+- **Detailed Feature Explanation**: Two-column checkout workspace featuring an event selector, seat-quantity validation against remaining venue capacity, attendee details auto-filled from the signed-in profile, segmented payment tabs (**Credit Card** with automatic card number/expiry formatting, **PayPal**, and **Invoice / Free**), and a live order summary computing subtotal + 3% processing fee.
 
 ---
 
-### 11. Enterprise Cybersecurity Operations Briefing
-![11. Enterprise Cybersecurity Operations Briefing](src/assets/images/event_cybersecurity_briefing_1795453999049.jpg)
+### 10. Confirmed Booking & Downloadable Digital Ticket Receipt
+![10. Confirmed Digital Ticket Receipt](docs/screenshots/10-digital-ticket-receipt.png)
 
-- **File**: `src/assets/images/event_cybersecurity_briefing_1795453999049.jpg`
-- **Event**: Enterprise Cybersecurity Briefing (`Forum`)
-- **Venue**: Meridian Executive Briefing Center, Washington D.C.
-- **Specs**: `1408 × 1056 px (4:3)` · `442 KB` · Uploaded `2026-11-07`
-- **Detailed Explanation**: Captures an executive threat-intelligence briefing inside a slate-lined boardroom. The curved walnut conference table and focused presenter framing illustrate the confidential, peer-level format built for chief information security officers and enterprise risk leaders.
+- **Screenshot**: `docs/screenshots/10-digital-ticket-receipt.png`
+- **Module**: `src/components/BookingView.tsx`
+- **Detailed Feature Explanation**: Completing checkout generates an instant confirmation screen with a unique alphanumeric ticket code (`EVT-9027-W`), total paid amount, attendee seat summary, toast confirmation, a **Download Receipt** button exporting a `.txt` ticket file, and automatic insertion into the live Attendee Roster.
 
 ---
 
-### 12. Seed Accelerator Live Demo Day Showcase
-![12. Seed Accelerator Live Demo Day Showcase](src/assets/images/event_startup_demo_day_1795453999664.jpg)
+### 11. Attendee Roster & Live Check-In Management
+![11. Attendee Roster & Check-In](docs/screenshots/11-attendee-checkin-roster.png)
 
-- **File**: `src/assets/images/event_startup_demo_day_1795453999664.jpg`
-- **Event**: Seed Accelerator Demo Day 2027 (`Conference`)
-- **Venue**: Foundry Brick Theater, San Francisco
-- **Specs**: `1408 × 1056 px (4:3)` · `469 KB` · Uploaded `2026-11-10`
-- **Detailed Explanation**: Documents the Demo Day theater layout where twelve graduating startup teams present three-minute live product walkthroughs. Warm brick walls and intimate tiered seating give visiting angel investors and venture partners clear sightlines to both the stage and projection deck.
+- **Screenshot**: `docs/screenshots/11-attendee-checkin-roster.png`
+- **Module**: `src/components/AttendeesView.tsx`
+- **Detailed Feature Explanation**: Operational check-in console supporting search by name, email, or ticket code, filtering by specific event, and segmented status tabs (**All**, **Checked**, **Pending**). Staff can toggle **Check In** / **Undo** in one click, safely remove entries via confirmation modal, or click **Export CSV** to download the filtered roster.
 
 ---
 
-### 13. Quantitative Data Science Research Symposium
-![13. Quantitative Data Science Research Symposium](src/assets/images/event_data_science_symposium_1795453999656.jpg)
+### 12. Saved Wishlist & Configurable Event Reminders
+![12. Saved Wishlist & Reminders](docs/screenshots/12-wishlist-reminders.png)
 
-- **File**: `src/assets/images/event_data_science_symposium_1795453999656.jpg`
-- **Event**: Data Science Research Symposium (`Workshop`)
-- **Venue**: North Campus Lecture Theater, Cambridge
-- **Specs**: `1408 × 1056 px (4:3)` · `435 KB` · Uploaded `2026-11-13`
-- **Detailed Explanation**: Showcases the academic-meets-industry atmosphere of the Data Science Research Symposium. Floor-to-ceiling natural daylight and tiered oak desks support extended technical lectures, open-mic Q&A discussions, and live notebook reproducibility sessions.
+- **Screenshot**: `docs/screenshots/12-wishlist-reminders.png`
+- **Module**: `src/components/WishlistView.tsx`
+- **Detailed Feature Explanation**: Displays all bookmarked events with cover thumbnails, venue/date metadata, ticket pricing, configurable advance reminder intervals (`2 hours before`, `1 day before`, `3 days before`, `1 week before`), active scheduled reminder indicators, and one-click **Book Tickets** or removal controls.
 
 ---
 
-### 14. Sustainable Urban Architecture & Energy Summit
-![14. Sustainable Urban Architecture & Energy Summit](src/assets/images/event_sustainability_summit_1795453999686.jpg)
+### 13. Sponsors & Underwriting Tiers Directory
+![13. Sponsors Directory](docs/screenshots/13-sponsors-directory.png)
 
-- **File**: `src/assets/images/event_sustainability_summit_1795453999686.jpg`
-- **Event**: Sustainable Urban Architecture Summit (`Conference`)
-- **Venue**: Botanical Glass Conservatory, Copenhagen
-- **Specs**: `1408 × 1056 px (4:3)` · `496 KB` · Uploaded `2026-11-16`
-- **Detailed Explanation**: Represents the Sustainable Urban Architecture & Clean Grid Summit. Set in a daylight-harvesting glass conservatory with solid oak benches, the visual reinforces the program theme of net-zero civic infrastructure and biophilic public venues.
+- **Screenshot**: `docs/screenshots/13-sponsors-directory.png`
+- **Module**: `src/components/SponsorsView.tsx`
+- **Detailed Feature Explanation**: Tracks total committed underwriting funds across **Platinum**, **Gold**, **Silver**, and **Bronze** tier summary cards alongside a structured partner ledger detailing organization websites, contact emails, dollar contributions, scope notes, and full Add / Edit / Remove modal workflows.
 
 ---
 
-### 15. VIP Speaker & Sponsor Appreciation Dinner
-![15. VIP Speaker & Sponsor Appreciation Dinner](src/assets/images/event_vip_speaker_dinner_1795454000386.jpg)
+### 14. Analytics & Financial Reporting — Revenue Bars & Exports
+![14. Analytics & Financial Reporting](docs/screenshots/14-analytics-revenue-reports.png)
 
-- **File**: `src/assets/images/event_vip_speaker_dinner_1795454000386.jpg`
-- **Event**: VIP Speaker & Sponsor Appreciation Dinner (`Gala`)
-- **Venue**: The Walnut Room, Chicago
-- **Specs**: `1408 × 1056 px (4:3)` · `458 KB` · Uploaded `2026-11-19`
-- **Detailed Explanation**: Uploaded for the post-conference Speaker & Sponsor Appreciation Dinner. Warm architectural sconces, candlelit walnut table service, and relaxed small-group seating communicate the exclusive relationship-building experience reserved for keynote faculty and Platinum partners.
+- **Screenshot**: `docs/screenshots/14-analytics-revenue-reports.png`
+- **Module**: `src/components/AnalyticsView.tsx`
+- **Detailed Feature Explanation**: Computes live portfolio metrics (**Combined Gross Revenue**, **Portfolio Seat Occupancy %**, and **Average Ticket Order Value**), renders proportional **Ticket Revenue by Event** horizontal bars, presents an event-by-event occupancy breakdown table, and provides one-click **Export CSV** and **Export JSON** report downloads.
 
 ---
 
-## Feature Walkthrough
+### 15. Dark Mode Workspace & Slide-Over Portal Help Desk
+![15. Dark Mode & Portal Help Desk](docs/screenshots/15-dark-mode-help-desk.png)
 
-1. **Dashboard Overview**: Displays real-time KPIs (Published Events, Tickets Issued & Check-In Rate, Ticket Revenue, Active Sponsors), upcoming flagship events spotlight, and recent attendee registrations.
-2. **Events Directory & Event Studio**: Live search, category filter, date filter, and price/date sorting across all 15 events. Clicking any event opens a full detail modal with multi-session agenda and speaker details. Organizers can create or edit events and attach images either from the 15-image library or via local file upload.
-3. **Media Gallery & Upload Studio**: Filterable showcase of all 15 curated uploaded photographs with detailed editorial explanations, a full-resolution Lightbox Metadata Inspector, and an interactive **Upload New Image** form (`FileReader` data URL persistence).
-4. **Ticket Reservation & Checkout**: Event selector, live seat capacity validation, 3% platform processing fee calculation, formatted Credit Card / PayPal / Invoice payment methods, and instant downloadable `.txt` ticket receipts.
-5. **Attendee Roster & Check-In**: Filter by event, check-in status (`All`, `Checked In`, `Pending`), or search by ticket code/email; toggle live check-ins; and export filtered rosters as `.csv`.
-6. **Wishlist & Reminders**: Bookmark favorite events and configure advance reminder intervals (`2 hours before`, `1 day before`, `3 days before`, `1 week before`).
-7. **Sponsors Directory**: Track Platinum, Gold, Silver, and Bronze underwriting tiers with full create/edit/delete management.
-8. **Analytics & Financial Reporting**: Live proportional revenue bar breakdown, portfolio seat occupancy, average order value, event performance table, and one-click **Export CSV** / **Export JSON** reports.
-9. **Account Management & Help Desk**: Sign in, register new accounts, or use one-click Demo Organizer access, plus a slide-over Portal Help Desk with quick navigation topics.
+- **Screenshot**: `docs/screenshots/15-dark-mode-help-desk.png`
+- **Module**: `src/App.tsx` & `src/components/HelpDrawer.tsx`
+- **Detailed Feature Explanation**: Demonstrates the full **Dark Theme** (`@custom-variant dark` across all surfaces, cards, charts, and tables) paired with the slide-over **Portal Help Desk** drawer, offering quick-topic buttons and grounded navigation shortcuts across all portal modules.
 
 ---
 
@@ -229,15 +184,17 @@ All 15 curated event photographs are stored in `src/assets/images/`, embedded be
 ├── package.json                # Dependencies and Vite scripts
 ├── vite.config.ts              # Vite + Tailwind v4 config (port 3000)
 ├── tsconfig.json               # Strict TypeScript configuration
-├── README.md                   # Complete documentation & 15-image embedded guide
+├── README.md                   # Complete documentation & 15 website feature screenshots
+├── docs/
+│   └── screenshots/            # 15 captured UI feature screenshots (.png)
 └── src/
     ├── main.tsx                # React root mount
     ├── index.css               # Tailwind v4 setup & typography rules
     ├── types.ts                # Domain interfaces (Events, MediaAsset, Attendee, Sponsor)
     ├── App.tsx                 # Main workspace shell, state, persistence, routing
-    ├── assets/images/          # 15 high-resolution curated event photographs (.jpg)
+    ├── assets/images/          # Seeded event photography (.jpg)
     ├── data/
-    │   └── seedData.ts         # 15 events, 15 detailed media records, attendees, sponsors
+    │   └── seedData.ts         # Events, media records, attendees, sponsors, reminders
     └── components/
         ├── AnalyticsView.tsx   # Revenue bars, occupancy table, CSV/JSON export
         ├── AttendeesView.tsx   # Roster table, live check-in, CSV export
@@ -246,7 +203,7 @@ All 15 curated event photographs are stored in `src/assets/images/`, embedded be
         ├── ConfirmModal.tsx    # Accessible confirmation dialog
         ├── DashboardView.tsx   # KPI strip, operations bar, spotlight, recent ledger
         ├── EventsView.tsx      # Searchable grid, agenda modal, create/edit with upload
-        ├── GalleryView.tsx     # 15-image showcase, lightbox inspector, upload studio
+        ├── GalleryView.tsx     # Media gallery showcase, lightbox inspector, upload studio
         ├── HelpDrawer.tsx      # Interactive support & navigation desk
         ├── ResilientImage.tsx  # Zero-broken-image wrapper with styled fallback
         ├── SponsorsView.tsx    # Sponsor tiers & CRUD ledger
