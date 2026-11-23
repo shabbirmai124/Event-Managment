@@ -738,7 +738,7 @@ export const EventsView: React.FC<EventsViewProps> = ({
                     }}
                     className="flex-1 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
                   >
-                    <option value="">Select from 10+ uploaded media assets...</option>
+                    <option value="">Select from {mediaAssets.length} uploaded media assets...</option>
                     {mediaAssets.map((m) => (
                       <option key={m.id} value={m.src}>
                         {m.title}

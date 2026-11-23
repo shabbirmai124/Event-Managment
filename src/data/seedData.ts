@@ -8,6 +8,11 @@ import imgFintechForum from '../assets/images/event_fintech_forum_1795427463640.
 import imgCloudBootcamp from '../assets/images/event_cloud_bootcamp_1795427464004.jpg';
 import imgProductExpo from '../assets/images/event_product_expo_1795427463465.jpg';
 import imgLeadershipRetreat from '../assets/images/event_leadership_retreat_1795427464411.jpg';
+import imgCybersecurityBriefing from '../assets/images/event_cybersecurity_briefing_1795453999049.jpg';
+import imgStartupDemoDay from '../assets/images/event_startup_demo_day_1795453999664.jpg';
+import imgDataScienceSymposium from '../assets/images/event_data_science_symposium_1795453999656.jpg';
+import imgSustainabilitySummit from '../assets/images/event_sustainability_summit_1795453999686.jpg';
+import imgVipSpeakerDinner from '../assets/images/event_vip_speaker_dinner_1795454000386.jpg';
 
 import type { Attendee, EventItem, MediaAsset, ReminderItem, Sponsor } from '../types';
 
@@ -171,6 +176,86 @@ export const SEED_MEDIA_ASSETS: MediaAsset[] = [
     caption: 'Closed-door executive planning roundtable surrounded by Pacific Northwest pine forest.',
     detailedExplanation:
       'Curated for the Annual Engineering & Product Leadership Retreat. Conveys the focused 12-seat round oak table format, natural daylighting, and distraction-free woodland setting designed for deep annual planning and peer executive alignment.',
+  },
+  {
+    id: 'img-11',
+    title: '11. Enterprise Cybersecurity Operations Briefing',
+    filename: 'event_cybersecurity_briefing_1795453999049.jpg',
+    src: imgCybersecurityBriefing,
+    category: 'Forum',
+    dimensions: '1408 × 1056 px (4:3)',
+    fileSize: '442 KB',
+    uploadedAt: '2026-11-07',
+    uploadedBy: 'Security Advisory Board',
+    venue: 'Meridian Executive Briefing Center, Washington D.C.',
+    linkedEventId: 'evt-11',
+    caption: 'CISO roundtable reviewing zero-trust network architecture and incident response protocols.',
+    detailedExplanation:
+      'Captures an executive threat-intelligence briefing inside a slate-lined boardroom. The curved walnut conference table and focused presenter framing illustrate the confidential, peer-level format built for chief information security officers and enterprise risk leaders.',
+  },
+  {
+    id: 'img-12',
+    title: '12. Seed Accelerator Live Demo Day Showcase',
+    filename: 'event_startup_demo_day_1795453999664.jpg',
+    src: imgStartupDemoDay,
+    category: 'Conference',
+    dimensions: '1408 × 1056 px (4:3)',
+    fileSize: '469 KB',
+    uploadedAt: '2026-11-10',
+    uploadedBy: 'Venture Programs',
+    venue: 'Foundry Brick Theater, San Francisco',
+    linkedEventId: 'evt-12',
+    caption: 'Cohort founder presenting product metrics on stage to institutional seed investors.',
+    detailedExplanation:
+      'Documents the Demo Day theater layout where twelve graduating startup teams present three-minute live product walkthroughs. Warm brick walls and intimate tiered seating give visiting angel investors and venture partners clear sightlines to both the stage and projection deck.',
+  },
+  {
+    id: 'img-13',
+    title: '13. Quantitative Data Science Research Symposium',
+    filename: 'event_data_science_symposium_1795453999656.jpg',
+    src: imgDataScienceSymposium,
+    category: 'Workshop',
+    dimensions: '1408 × 1056 px (4:3)',
+    fileSize: '435 KB',
+    uploadedAt: '2026-11-13',
+    uploadedBy: 'Research Committee',
+    venue: 'North Campus Lecture Theater, Cambridge',
+    linkedEventId: 'evt-13',
+    caption: 'Audience Q&A dialogue during a peer-reviewed applied statistics and ML systems talk.',
+    detailedExplanation:
+      'Showcases the academic-meets-industry atmosphere of the Data Science Research Symposium. Floor-to-ceiling natural daylight and tiered oak desks support extended technical lectures, open-mic Q&A discussions, and live notebook reproducibility sessions.',
+  },
+  {
+    id: 'img-14',
+    title: '14. Sustainable Urban Architecture & Energy Summit',
+    filename: 'event_sustainability_summit_1795453999686.jpg',
+    src: imgSustainabilitySummit,
+    category: 'Conference',
+    dimensions: '1408 × 1056 px (4:3)',
+    fileSize: '496 KB',
+    uploadedAt: '2026-11-16',
+    uploadedBy: 'Civic Sustainability Office',
+    venue: 'Botanical Glass Conservatory, Copenhagen',
+    linkedEventId: 'evt-14',
+    caption: 'Plenary keynote inside a solar-integrated glass conservatory surrounded by living flora.',
+    detailedExplanation:
+      'Represents the Sustainable Urban Architecture & Clean Grid Summit. Set in a daylight-harvesting glass conservatory with solid oak benches, the visual reinforces the program theme of net-zero civic infrastructure and biophilic public venues.',
+  },
+  {
+    id: 'img-15',
+    title: '15. VIP Speaker & Sponsor Appreciation Dinner',
+    filename: 'event_vip_speaker_dinner_1795454000386.jpg',
+    src: imgVipSpeakerDinner,
+    category: 'Gala',
+    dimensions: '1408 × 1056 px (4:3)',
+    fileSize: '458 KB',
+    uploadedAt: '2026-11-19',
+    uploadedBy: 'VIP Hospitality',
+    venue: 'The Walnut Room, Chicago',
+    linkedEventId: 'evt-15',
+    caption: 'Private post-summit hospitality dinner hosting keynote speakers and Platinum sponsors.',
+    detailedExplanation:
+      'Uploaded for the post-conference Speaker & Sponsor Appreciation Dinner. Warm architectural sconces, candlelit walnut table service, and relaxed small-group seating communicate the exclusive relationship-building experience reserved for keynote faculty and Platinum partners.',
   },
 ];
 
@@ -403,6 +488,116 @@ export const SEED_EVENTS: EventItem[] = [
       { time: '08:30 AM', title: 'Morning Roundtable: 2027 Capital & Headcount Allocation', speaker: 'Arthur Pendelton' },
       { time: '12:30 PM', title: 'Woodland Walk & Peer Coaching Pairs', speaker: 'Facilitators' },
       { time: '03:00 PM', title: 'Closing Commitments & Quarterly Checkpoints', speaker: 'Arthur Pendelton' },
+    ],
+  },
+  {
+    id: 'evt-11',
+    name: 'Enterprise Cybersecurity Briefing',
+    description:
+      'Closed-door CISO briefing on zero-trust identity architecture, supply-chain hardening, and incident containment.',
+    detailedExplanation:
+      'An executive security tabletop and architectural review hosted at the Meridian Executive Briefing Center. Security leaders walk through real-world breach postmortems and evaluate multi-cloud IAM guardrails.',
+    date: '2027-02-26',
+    time: '09:00',
+    location: 'Meridian Executive Briefing Center, Washington D.C.',
+    category: 'Forum',
+    price: 275,
+    capacity: 30,
+    speaker: 'Rachel Holloway',
+    speakerRole: 'Chief Information Security Officer, SentinelGrid',
+    imageId: 'img-11',
+    imageUrl: imgCybersecurityBriefing,
+    agenda: [
+      { time: '09:00 AM', title: 'Zero-Trust Identity & Ephemeral Credentials', speaker: 'Rachel Holloway' },
+      { time: '11:00 AM', title: 'Executive Tabletop: Ransomware Containment', speaker: 'Response Team' },
+    ],
+  },
+  {
+    id: 'evt-12',
+    name: 'Seed Accelerator Demo Day 2027',
+    description:
+      'Twelve graduating deep-tech startups presenting live product demonstrations to institutional seed investors.',
+    detailedExplanation:
+      'Held at the historic Foundry Brick Theater, Demo Day pairs concise three-minute founder product demos with direct 1-on-1 Q&A booths immediately following the stage program.',
+    date: '2027-03-05',
+    time: '15:00',
+    location: 'Foundry Brick Theater, San Francisco',
+    category: 'Conference',
+    price: 75,
+    capacity: 200,
+    speaker: 'Linnea Sato',
+    speakerRole: 'Program Partner, Foundry Seed',
+    imageId: 'img-12',
+    imageUrl: imgStartupDemoDay,
+    agenda: [
+      { time: '03:00 PM', title: 'Batch Cohort Product Demonstrations', speaker: 'Cohort Founders' },
+      { time: '05:00 PM', title: 'Investor & Founder Demo Booths', speaker: 'Linnea Sato' },
+    ],
+  },
+  {
+    id: 'evt-13',
+    name: 'Data Science Research Symposium',
+    description:
+      'Peer-reviewed technical talks covering causal inference, evaluation benchmarks, and reproducible ML pipelines.',
+    detailedExplanation:
+      'Brings together applied statisticians and ML infrastructure engineers in a university lecture theater for open-mic Q&A, benchmark reviews, and open-source dataset releases.',
+    date: '2027-03-12',
+    time: '10:00',
+    location: 'North Campus Lecture Theater, Cambridge',
+    category: 'Workshop',
+    price: 90,
+    capacity: 150,
+    speaker: 'Prof. Martin Alvarez',
+    speakerRole: 'Chair of Applied Statistics, Cambridge Institute',
+    imageId: 'img-13',
+    imageUrl: imgDataScienceSymposium,
+    agenda: [
+      { time: '10:00 AM', title: 'Causal Uplift Modeling in Marketplace Systems', speaker: 'Prof. Martin Alvarez' },
+      { time: '01:30 PM', title: 'Reproducible Evaluation Harnesses', speaker: 'Dr. Hannah Cho' },
+    ],
+  },
+  {
+    id: 'evt-14',
+    name: 'Sustainable Urban Architecture Summit',
+    description:
+      'International summit focused on mass-timber civic construction, microgrid integration, and low-carbon venues.',
+    detailedExplanation:
+      'Hosted inside Copenhagen’s solar-roofed Botanical Glass Conservatory, architects and municipal grid planners examine actionable blueprints for net-zero public buildings.',
+    date: '2027-03-19',
+    time: '09:30',
+    location: 'Botanical Glass Conservatory, Copenhagen',
+    category: 'Conference',
+    price: 160,
+    capacity: 180,
+    speaker: 'Freja Lindholm',
+    speakerRole: 'Principal Urban Architect, Nordic Civic Lab',
+    imageId: 'img-14',
+    imageUrl: imgSustainabilitySummit,
+    agenda: [
+      { time: '09:30 AM', title: 'Opening Address: Net-Zero Civic Infrastructure', speaker: 'Freja Lindholm' },
+      { time: '02:00 PM', title: 'Building-Integrated Photovoltaics Case Studies', speaker: 'Soren Bakke' },
+    ],
+  },
+  {
+    id: 'evt-15',
+    name: 'VIP Speaker & Sponsor Appreciation Dinner',
+    description:
+      'Private three-course evening dinner honoring summit keynote speakers, track chairs, and Platinum sponsors.',
+    detailedExplanation:
+      'An intimate candlelit hospitality dinner in The Walnut Room celebrating conference faculty and underwriting partners with curated wine pairings and informal round-table conversation.',
+    date: '2027-03-25',
+    time: '19:30',
+    location: 'The Walnut Room, Chicago',
+    category: 'Gala',
+    price: 420,
+    capacity: 28,
+    speaker: 'Alistair Sterling',
+    speakerRole: 'Chair, EventPortal Advisory Board',
+    imageId: 'img-15',
+    imageUrl: imgVipSpeakerDinner,
+    agenda: [
+      { time: '07:30 PM', title: 'Welcome Aperitif & Faculty Introductions', speaker: 'Alistair Sterling' },
+      { time: '08:15 PM', title: 'Seasonal Tasting Menu & Partner Toast', speaker: 'Executive Hosts' },
     ],
   },
 ];

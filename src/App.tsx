@@ -48,15 +48,15 @@ import { HelpDrawer } from './components/HelpDrawer';
 import { ToastContainer } from './components/ToastContainer';
 
 const STORAGE_KEYS = {
-  events: 'ep_events_v2',
-  media: 'ep_media_v2',
-  attendees: 'ep_attendees_v2',
-  sponsors: 'ep_sponsors_v2',
-  wishlist: 'ep_wishlist_v2',
-  reminders: 'ep_reminders_v2',
-  users: 'ep_users_v2',
-  currentUser: 'ep_current_user_v2',
-  theme: 'ep_theme_v2',
+  events: 'ep_events_v3',
+  media: 'ep_media_v3',
+  attendees: 'ep_attendees_v3',
+  sponsors: 'ep_sponsors_v3',
+  wishlist: 'ep_wishlist_v3',
+  reminders: 'ep_reminders_v3',
+  users: 'ep_users_v3',
+  currentUser: 'ep_current_user_v3',
+  theme: 'ep_theme_v3',
 };
 
 function readStorage<T>(key: string, fallback: T): T {
@@ -582,7 +582,7 @@ export function App() {
               onClick={() => handleNavigate('gallery')}
               className="hover:text-slate-900 dark:hover:text-white whitespace-nowrap shrink-0"
             >
-              10 Uploaded Photos
+              {mediaAssets.length} Uploaded Photos
             </button>
             <button
               type="button"
